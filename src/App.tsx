@@ -1,8 +1,3 @@
-import { GitHubBanner, Refine } from "@refinedev/core";
-import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
-import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-
-import { ErrorComponent, ThemedLayoutV2, ThemedSiderV2, useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
 import routerBindings, {
@@ -10,12 +5,19 @@ import routerBindings, {
   NavigateToResource,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
-import dataProvider from "@refinedev/simple-rest";
-import { App as AntdApp } from "antd";
-import { useTranslation } from "react-i18next";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import { Header } from "@/components/header";
-import { ColorModeContextProvider } from "@/contexts/color-mode";
+import { useTranslation } from "react-i18next";
+
+import { App as AntdApp } from "antd";
+
+import { Refine } from "@refinedev/core";
+import dataProvider from "@refinedev/simple-rest";
+import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
+import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
+import { ErrorComponent, ThemedLayoutV2, ThemedSiderV2, useNotificationProvider } from "@refinedev/antd";
+
+import { ColorModeContextProvider } from "@/providers";
+import { Header } from "@/components";
 import { BlogPostCreate, BlogPostEdit, BlogPostList, BlogPostShow } from "@/pages/blog-posts";
 import { CategoryCreate, CategoryEdit, CategoryList, CategoryShow } from "@/pages/categories";
 
@@ -30,7 +32,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <AntdApp>
@@ -66,7 +67,6 @@ function App() {
                   syncWithLocation: true,
                   warnWhenUnsavedChanges: true,
                   useNewQueryKeys: true,
-                  projectId: "sRasRe-ySmaaU-ECIgs3",
                 }}
               >
                 <Routes>

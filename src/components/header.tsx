@@ -4,7 +4,7 @@ import { useGetIdentity, useGetLocale, useSetLocale } from "@refinedev/core";
 import { Layout as AntdLayout, Avatar, Button, Dropdown, MenuProps, Space, Switch, Typography, theme } from "antd";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { ColorModeContext } from "@/contexts/color-mode";
+import { ColorModeContext } from "@/providers/color-mode-context";
 
 const { Text } = Typography;
 const { useToken } = theme;
