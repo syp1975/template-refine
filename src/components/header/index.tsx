@@ -1,20 +1,10 @@
 import { DownOutlined } from "@ant-design/icons";
 import type { RefineThemedLayoutV2HeaderProps } from "@refinedev/antd";
 import { useGetIdentity, useGetLocale, useSetLocale } from "@refinedev/core";
-import {
-  Layout as AntdLayout,
-  Avatar,
-  Button,
-  Dropdown,
-  MenuProps,
-  Space,
-  Switch,
-  Typography,
-  theme,
-} from "antd";
+import { Layout as AntdLayout, Avatar, Button, Dropdown, MenuProps, Space, Switch, Typography, theme } from "antd";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { ColorModeContext } from "../../contexts/color-mode";
+import { ColorModeContext } from "@/contexts/color-mode";
 
 const { Text } = Typography;
 const { useToken } = theme;
@@ -25,9 +15,7 @@ type IUser = {
   avatar: string;
 };
 
-export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
-  sticky,
-}) => {
+export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({ sticky }) => {
   const { token } = useToken();
   const { i18n } = useTranslation();
   const locale = useGetLocale();
@@ -37,18 +25,16 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
 
   const currentLocale = locale();
 
-  const menuItems: MenuProps["items"] = [...(i18n.languages || [])]
-    .sort()
-    .map((lang: string) => ({
-      key: lang,
-      onClick: () => changeLanguage(lang),
-      icon: (
-        <span style={{ marginRight: 8 }}>
-          <Avatar size={16} src={`/images/flags/${lang}.svg`} />
-        </span>
-      ),
-      label: lang === "en" ? "English" : "German",
-    }));
+  const menuItems: MenuProps["items"] = [...(i18n.languages || [])].sort().map((lang: string) => ({
+    key: lang,
+    onClick: () => changeLanguage(lang),
+    icon: (
+      <span style={{ marginRight: 8 }}>
+        <Avatar size={16} src={`/images/flags/${lang}.svg`} />
+      </span>
+    ),
+    label: lang === "en" ? "English" : "German",
+  }));
 
   const headerStyles: React.CSSProperties = {
     backgroundColor: token.colorBgElevated,
