@@ -1,0 +1,120 @@
+{
+  "pages": {
+    "login": {
+      "title": "Inicia sesión",
+      "signin": "Entrar",
+      "signup": "Crear cuenta",
+      "divider": "o",
+      "fields": {
+        "email": "Correo electrónico",
+        "password": "Contraseña"
+      },
+      "errors": {
+        "validEmail": "Correo electrónico no válido"
+      },
+      "buttons": {
+        "submit": "Entrar",
+        "forgotPassword": "¿Contraseña olvidada?",
+        "noAccount": "¿Crear una cuenta?",
+        "rememberMe": "Recuérdame"
+      }
+    },
+    "forgotPassword": {
+      "title": "¿Contraseña olvidada?",
+      "fields": {
+        "email": "Correo electrónico"
+      },
+      "errors": {
+        "validEmail": "Correo electrónico no válido"
+      },
+      "buttons": {
+        "submit": "Enviar instrucciones para reiniciar la contraseña"
+      }
+    },
+    "register": {
+      "title": "Crear una nueva cuenta",
+      "fields": {
+        "email": "Correo electrónico",
+        "password": "Contraseña"
+      },
+      "errors": {
+        "validEmail": "Correo electrónico no válido"
+      },
+      "buttons": {
+        "submit": "Crear cuenta",
+        "haveAccount": "¿Ya tienes una cuenta?"
+      }
+    },
+    "updatePassword": {
+      "title": "Modificar contraseña",
+      "fields": {
+        "password": "Nueva contraseña",
+        "confirmPassword": "Confirmar nueva contraseña"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "Las contraseñas no coinciden"
+      },
+      "buttons": {
+        "submit": "Modificar"
+      }
+    },
+    "error": {
+      "info": "No existe la acción '{{action}}' en el recurso '{{resource}}'.",
+      "404": "Lo siento, la página que quieres visitar no existe.",
+      "resource404": "El recurso '{{resource}}' no existe.",
+      "backHome": "Volver a Inicio"
+    }
+  },
+  "autoSave": {
+    "success": "Guardado",
+    "error": "Error guardando",
+    "loading": "Guardando ...",
+    "idle": " "
+  },
+  "actions": {
+    "list": "Listado",
+    "create": "Crear",
+    "edit": "Modificar",
+    "show": "Mostrar"
+  },
+  "buttons": {
+    "create": "Crear",
+    "save": "Guardar",
+    "logout": "Salir",
+    "delete": "Borrar",
+    "edit": "Modificar",
+    "cancel": "Cancelar",
+    "confirm": "¿Estás seguro?",
+    "filter": "Filtro",
+    "clear": "Limpiar",
+    "refresh": "Actualizar",
+    "show": "Mostrar",
+    "undo": "Deshacer",
+    "import": "Importar",
+    "clone": "Clonar",
+    "notAccessTitle": "No tienes permiso de acceso"
+  },
+  "warnWhenUnsavedChanges": "Hay modificaciones no guardas. ¿Quieres salir igualmente?",
+  "notifications": {
+    "success": "Hecho",
+    "error": "Error",
+    "undoable": "{{seconds}} segundos para deshacer",
+    "createSuccess": "'{{resource}}' creado",
+    "createError": "Error creando '{{resource}}' (status code: {{statusCode}})",
+    "deleteSuccess": "'{{resource}}' borrado",
+    "deleteError": "Error borrando '{{resource}}'. \n{{statusCode}}",
+    "editSuccess": "'{{resource}}' modificado",
+    "editError": "Error modificando '{{resource}}' (status code: {{statusCode}})",
+    "importProgress": "Importando: {{processed}} / {{total}}"
+  },
+  "loading": "Cargando",
+  "tags": {
+    "clone": "Clón"
+  },
+  "dashboard": {
+    "title": "Panel de control"
+  },
+  "table": {
+    "actions": "Acciones"
+  }
+}
