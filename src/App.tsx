@@ -16,7 +16,7 @@ import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { ErrorComponent, ThemedLayoutV2, ThemedSiderV2, useNotificationProvider } from "@refinedev/antd";
 
-import { ColorModeContextProvider } from "@/providers";
+import { ColorModeContextProvider } from "@/contexts";
 import { Header } from "@/components";
 import { BlogPostCreate, BlogPostEdit, BlogPostList, BlogPostShow } from "@/pages/blog-posts";
 import { CategoryCreate, CategoryEdit, CategoryList, CategoryShow } from "@/pages/categories";

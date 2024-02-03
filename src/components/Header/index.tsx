@@ -4,7 +4,8 @@ import { useGetIdentity, useGetLocale, useSetLocale } from "@refinedev/core";
 import { Layout as AntdLayout, Avatar, Button, Dropdown, MenuProps, Space, Switch, Typography, theme } from "antd";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
-import { ColorModeContext } from "@/providers/color-mode-context";
+import { languages } from "@/services";
+import { ColorModeContext } from "@/contexts";
 
 const { Text } = Typography;
 const { useToken } = theme;
@@ -24,16 +25,16 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({ sticky }) =>
   const { mode, setMode } = useContext(ColorModeContext);
 
   const currentLocale = locale();
-
+  console.log(i18n.languages);
   const menuItems: MenuProps["items"] = [...(i18n.languages || [])].sort().map((lang: string) => ({
     key: lang,
     onClick: () => changeLanguage(lang),
     icon: (
       <span style={{ marginRight: 8 }}>
-        <Avatar size={16} src={`/images/flags/${lang}.svg`} />
+        <Avatar size={24} src={`/images/flags/${lang}.svg`} />
       </span>
     ),
-    label: lang === "en" ? "English" : "German",
+    label: languages[lang] ?? "???",
   }));
 
   const headerStyles: React.CSSProperties = {
@@ -62,8 +63,8 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({ sticky }) =>
         >
           <Button type="text">
             <Space>
-              <Avatar size={16} src={`/images/flags/${currentLocale}.svg`} />
-              {currentLocale === "en" ? "English" : "German"}
+              <Avatar size={24} src={`/images/flags/${currentLocale}.svg`} />
+              {languages[currentLocale ?? "en"] ?? "???"}
               <DownOutlined />
             </Space>
           </Button>
