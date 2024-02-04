@@ -45,6 +45,8 @@
   "scripts": {
     "dev": "refine dev",
     "build": "tsc && refine build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
     "preview": "refine start",
     "refine": "refine"
   },
