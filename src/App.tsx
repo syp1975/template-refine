@@ -11,10 +11,12 @@ import { useTranslation } from "react-i18next";
 import { App as AntdApp } from "antd";
 
 import { Refine } from "@refinedev/core";
-import dataProvider from "@refinedev/simple-rest";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { ErrorComponent, ThemedLayoutV2, ThemedSiderV2, useNotificationProvider } from "@refinedev/antd";
+
+import dataProvider from "@refinedev/simple-rest";
+const DATA_PROVIDER_URL = "https://api.fake-rest.refine.dev";
 
 import { ColorModeContextProvider } from "@/contexts";
 import { Header } from "@/components";
@@ -37,7 +39,7 @@ function App() {
           <AntdApp>
             <DevtoolsProvider>
               <Refine
-                dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+                dataProvider={dataProvider(DATA_PROVIDER_URL)}
                 notificationProvider={useNotificationProvider}
                 routerProvider={routerBindings}
                 i18nProvider={i18nProvider}
